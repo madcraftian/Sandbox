@@ -1,0 +1,33 @@
+#!/bin/bash
+
+source .reset.d/lib.sh
+
+PARAM_1=$1
+
+if [[ -z ${PARAM_1} ]]; then
+	log_error "empty parameter; it needs a name.\nusage: ./save { NAME }"
+	exit 1
+fi
+
+DEST_DIR="../samples/${PARAM_1}"
+
+if [[ -d ${DEST_DIR} ]]; then
+	log_error "directory already existed"
+	exit 1
+fi
+
+# Create destination directory
+log_message "created destination directory: ${PARAM_1}"
+mkdir -p ${DEST_DIR}
+
+# Copy necessary files to destination directory
+log_message "copying files to destination directory"
+cp -R * ${DEST_DIR}
+
+log_message "copying .vimspector.json to destination directory"
+cp .vimspector.json ${DEST_DIR}
+
+# Remove unecessary files
+cd ${DEST_DIR}
+make cleanall
+rm -rf .reset.d/ reset save

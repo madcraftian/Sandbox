@@ -1,0 +1,13 @@
+{
+	"configurations": {
+		"Launch": {
+			"adapter": "vscode-cpptools",
+			"filetypes": [ "asm" ],
+			"configuration": {
+				"request": "launch",
+				"program": "bin/TEMPLATE_ELF64",
+				"stopAtEntry": true
+			}
+		}
+	}
+}

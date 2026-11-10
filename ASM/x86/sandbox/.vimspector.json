@@ -1,0 +1,21 @@
+{
+	"configurations": {
+		"Launch": {
+			"adapter": "vscode-cpptools",
+			"filetypes": [ "asm" ],
+			"configuration": {
+				"request": "launch",
+				"program": "bin/TEMPLATE_ELF32",
+				"stopAtEntry": true,
+				"MIMode": "gdb",
+				"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"text": "-enable-pretty-printing",
+						"ignoreFailures": true
+					}
+				]
+			}
+		}
+	}
+}

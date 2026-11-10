@@ -1,0 +1,7 @@
+#!/bin/bash
+
+make cleanall
+if [[ -f "compile_commands.json" ]]; then
+	rm compile_commands.json
+fi
+source .reset.d/reset.sh
