@@ -1,0 +1,7 @@
+# Directories to ignore
+bin/
+obj/
+
+# Files to ignore
+.vimspector.json
+compile_commands.json
